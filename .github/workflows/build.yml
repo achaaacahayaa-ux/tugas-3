@@ -1,0 +1,16 @@
+@echo off
+title Membuat EXE Program Warung
+where g++ >nul 2>nul
+if errorlevel 1 (
+    echo Compiler g++ belum ditemukan.
+    echo Instal MinGW-w64 atau MSYS2, lalu tambahkan g++ ke PATH.
+    pause
+    exit /b 1
+)
+g++ program_warung.cpp -o program_warung.exe
+if errorlevel 1 (
+    echo Gagal membuat EXE. Periksa pesan error di atas.
+) else (
+    echo Berhasil! File program_warung.exe sudah dibuat.
+)
+pause
